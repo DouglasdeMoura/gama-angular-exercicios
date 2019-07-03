@@ -1,4 +1,11 @@
-<div [ngStyle]="{ color: contador < 0 ? 'red' : 'blue' }" [ngClass]="{ greater5: contador > 5 }">{{ contador }}</div>
+<div
+  [ngStyle]="{ 'border-left': contador < 0 ? '1px solid red' : '1px solid green' }"
+  [ngClass]="'alert'"
+  [ngClass]="{ 'alert-success': contador > 5 }"
+  [ngClass]="{ 'alert-warning': contador < 5 }"
+  [ngClass]="{ 'alert-error': contador < 0 }">
+  {{ contador }}
+</div>
 
 <div *ngIf="contador > 5; else menorQue5">Contador maior que 5</div>
 
@@ -7,4 +14,4 @@
 </ng-template>
 
 <button (click)="aumentar()" class="btn btn-primary">+</button>
-<button (click)="diminuir()" class="btn btn-danger">-</button>
+<button (click)="diminuir()" class="btn btn-warning">-</button>
