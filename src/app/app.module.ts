@@ -6,20 +6,26 @@ import { ContadorComponent } from './contador/contador.component';
 import { LinguagensComponent } from './linguagens/linguagens.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { AddLanguageComponent } from './add-language/add-language.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  { path: 'linguagens', component: LinguagensComponent }
+  { path: 'exercicio1', component: ContadorComponent },
+  { path: 'exercicio2', component: LinguagensComponent },
+  { path: 'exercicio3', component: AddLanguageComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ContadorComponent,
-    LinguagensComponent
+    LinguagensComponent,
+    AddLanguageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

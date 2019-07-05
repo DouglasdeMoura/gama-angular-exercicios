@@ -17,7 +17,6 @@ export class LinguagensComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.linguagensService.getLanguages()
         .subscribe(value => {
-          console.log(value);
           this.linguagens = value;
         })
     });
